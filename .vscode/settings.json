@@ -1,0 +1,12 @@
+{
+  "files.associations": {
+    "string": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "enabled",
+  "C_Cpp.formatting": "disabled",
+  "C_Cpp.clang_format_style": "none",
+  "C_Cpp.windowsErrorReportingMode": "default",
+  "eslint.validate": [
+
+  ]
+}
