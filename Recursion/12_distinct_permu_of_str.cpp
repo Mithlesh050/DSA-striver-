@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std ;
 
-class Solution {
+/* class Solution {
   private :
     void f(string &temp , vector<int> &freq , set<string> &st , string &s){
         if(temp.size()==s.size()){
@@ -25,6 +25,29 @@ class Solution {
         vector<int> freq(s.size() , 0) ;
         set<string> st ;
         f(temp , freq , st , s) ;
+        for(auto it : st) ans.push_back(it) ;
+        return ans ;
+    }
+}; */
+
+class Solution {
+  private :
+    void f(int ind , set<string> &st , string &s){
+        if(ind==s.size()){
+           st.insert(s) ;
+           return ; 
+        }
+        for(int i=ind ; i<s.size() ; i++){
+            swap(s[ind] , s[i]) ;
+            f(ind+1 , st , s) ;
+            swap(s[ind] , s[i]) ;
+        }
+    }
+  public:
+    vector<string> findPermutation(string &s) {
+        vector<string> ans ;
+        set<string> st ;
+        f(0 , st , s) ;
         for(auto it : st) ans.push_back(it) ;
         return ans ;
     }
